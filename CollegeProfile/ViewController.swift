@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var addButton: UIBarButtonItem!
@@ -30,9 +30,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //Toggle editing on
         editButton.tag = 0
         
-        
-
-        
         //ERROR:
         //I'm getting an EXC BAD INSTRUCTION error which normally has to do with some implicitly unwrapped optional property (according to Stack Overflow). I've played around with placement of the ! and Xcode won't compile unless the ! is there. I've tried swapping it with a ?, and Xcode doesn't like that.
         //Sidenote: Why does Xcode make suggestions that it then refuses to compile...?
@@ -40,7 +37,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //I'm an idiot.
         
         //Initializing sample
-        colleges.append(College(name: "UCSD", state: "California", population: 32000, image: (UIImage(named: "uic")!)))
+        colleges.append(College(name: "UCSD", state: "California", population: 32000, image: (UIImage(named: "ucsd")!)))
+        colleges.append(College(name: "UCLA", state: "California", population: 43000, image: (UIImage(named: "ucla")!)))
+        colleges.append(College(name: "UIC", state: "Illinois", population: 16000, image: (UIImage(named: "uic")!)))
+        colleges.append(College(name: "Harvard", state: "Massachussets", population: 16000, image: (UIImage(named: "harvard")!)))
+        colleges.append(College(name: "Princeton", state: "New Jersey", population: 3000, image: (UIImage(named: "princeton")!)))
     }
     
     //Set up tableView
@@ -64,7 +65,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             tableView.reloadData()
         }
     }
-
+    
     //Allow entries to be added and then allow cancellation of addition
     @IBAction func onButtonPressAdd(sender: UIBarButtonItem) {
         
@@ -85,7 +86,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.colleges.append(College(name: collegeTextField.text!))
             self.tableView.reloadData()
         }
-    
         alert.addAction(addAction)
         self.presentViewController(alert, animated: true, completion: nil)
     }
@@ -95,7 +95,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return true
     }
     
-    //Reordering things
+    //Allows for reordering
     func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
         let college = colleges[sourceIndexPath.row]
         colleges.removeAtIndex(sourceIndexPath.row)
@@ -120,7 +120,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let dvc = segue.destinationViewController as! DetailViewController
         let index = tableView.indexPathForSelectedRow?.row
         dvc.college = colleges[index!]
-        }
-    
-    
+    }
 }
