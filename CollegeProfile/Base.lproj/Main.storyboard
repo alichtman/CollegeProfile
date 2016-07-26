@@ -110,12 +110,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XPt-r1-vZy">
-                                <rect key="frame" x="132" y="193" width="150" height="30"/>
-                                <color key="backgroundColor" white="0.73766163789999994" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6Q-xs-8se">
                                 <rect key="frame" x="350" y="79" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
@@ -130,6 +124,10 @@
                                     <constraint firstAttribute="height" constant="150" id="f0G-9F-ql1"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bB8-uG-znQ">
+                                <rect key="frame" x="132" y="193" width="150" height="30"/>
+                                <state key="normal" title="URL"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -147,6 +145,7 @@
                         <outlet property="imageView" destination="TSN-zo-vFi" id="qbr-Hc-fqR"/>
                         <outlet property="populationTextField" destination="Q9B-kj-Y0K" id="vsf-vs-YSl"/>
                         <outlet property="stateTextField" destination="idj-ZE-nCe" id="V84-Cu-IDN"/>
+                        <outlet property="urlButton" destination="bB8-uG-znQ" id="eLo-hd-gNX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pvn-RP-9uC" userLabel="First Responder" sceneMemberID="firstResponder"/>

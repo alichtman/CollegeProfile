@@ -37,11 +37,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //I'm an idiot.
         
         //Initializing sample
-        colleges.append(College(name: "UCSD", state: "California", population: 32000, image: (UIImage(named: "ucsd")!)))
-        colleges.append(College(name: "UCLA", state: "California", population: 43000, image: (UIImage(named: "ucla")!)))
-        colleges.append(College(name: "UIC", state: "Illinois", population: 16000, image: (UIImage(named: "uic")!)))
-        colleges.append(College(name: "Harvard", state: "Massachussets", population: 16000, image: (UIImage(named: "harvard")!)))
-        colleges.append(College(name: "Princeton", state: "New Jersey", population: 3000, image: (UIImage(named: "princeton")!)))
+        colleges.append(College(name: "UCSD", state: "California", population: 32000, image: (UIImage(named: "ucsd")!), url: "www.ucsd.edu"))
+        colleges.append(College(name: "UCLA", state: "California", population: 43000, image: (UIImage(named: "ucla")!), url: "www.ucla.edu"))
+        colleges.append(College(name: "UIC", state: "Illinois", population: 16000, image: (UIImage(named: "uic")!), url: "www.uic.edu"))
+        colleges.append(College(name: "Harvard", state: "Massachussets", population: 16000, image: (UIImage(named: "harvard")!), url: "www.harvard.edu"))
+        colleges.append(College(name: "Princeton", state: "New Jersey", population: 3000, image: (UIImage(named: "princeton")!), url: "www.princeton.edu"))
     }
     
     //Set up tableView

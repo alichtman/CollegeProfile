@@ -11,10 +11,9 @@ import UIKit
 class DetailViewController: UIViewController {
     
     @IBOutlet weak var collegeTextField: UITextField!
-    
     @IBOutlet weak var stateTextField: UITextField!
-
     @IBOutlet weak var populationTextField: UITextField!
+    @IBOutlet weak var urlButton: UIButton!
     
     @IBOutlet weak var imageView: UIImageView!
     //------------------------------------------------------
@@ -32,7 +31,7 @@ class DetailViewController: UIViewController {
         stateTextField.text = college.state
         populationTextField.text = String(college.population)
         imageView.image = college.image
-
+        urlButton.setTitle(college.url, forState: .Normal)
     }
     
     @IBAction func onPressedSaveButton(sender: AnyObject) {
