@@ -55,7 +55,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IM0-km-Sel">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Clh-KH-tVR"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Clh-KH-tVR">
+                            <connections>
+                                <action selector="onButtonPressEdit:" destination="BYZ-38-t0r" id="hJp-sI-Xps"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ovV-5c-mtu">
                             <connections>
                                 <action selector="onButtonPressAdd:" destination="BYZ-38-t0r" id="rr0-MG-qOl"/>
@@ -64,6 +68,8 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="addButton" destination="ovV-5c-mtu" id="jwj-TS-9DJ"/>
+                        <outlet property="editButton" destination="Clh-KH-tVR" id="UoZ-7W-fSb"/>
                         <outlet property="tableView" destination="JK0-tO-VVI" id="tOQ-Vb-XNB"/>
                     </connections>
                 </viewController>
