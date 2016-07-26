@@ -13,7 +13,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var collegeTextField: UITextField!
     @IBOutlet weak var stateTextField: UITextField!
     @IBOutlet weak var populationTextField: UITextField!
-    @IBOutlet weak var urlButton: UIButton!
+    @IBOutlet weak var urlTextField: UITextField!
     
     @IBOutlet weak var imageView: UIImageView!
     //------------------------------------------------------
@@ -31,7 +31,14 @@ class DetailViewController: UIViewController {
         stateTextField.text = college.state
         populationTextField.text = String(college.population)
         imageView.image = college.image
-        urlButton.setTitle(college.url, forState: .Normal)
+        urlTextField.text = college.url
+    }
+    
+    //Allow embedded safari page
+    @IBAction func onPressedSafariButton(sender: UIButton) {
+        let url = NSURL(string: urlTextField.text!)!
+        UIApplication.sharedApplication().openURL(url)
+        
     }
     
     @IBAction func onPressedSaveButton(sender: AnyObject) {
@@ -39,9 +46,10 @@ class DetailViewController: UIViewController {
         college.name = collegeTextField.text!
         college.state = stateTextField.text!
         college.population = Int(populationTextField.text!)!
+        college.url = urlTextField.text!
         
         //Pull keyboard
         self.view.endEditing(true)
-        }
-
+    }
+    
 }

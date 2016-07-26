@@ -117,16 +117,24 @@
                                     <action selector="onPressedSaveButton:" destination="4O0-Lq-8Tq" eventType="touchUpInside" id="Fmy-AY-n3w"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zOK-4F-J74">
+                                <rect key="frame" x="132" y="193" width="150" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TSN-zo-vFi">
-                                <rect key="frame" x="82" y="243" width="250" height="250"/>
+                                <rect key="frame" x="82" y="268" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="E9T-wI-0fu"/>
                                     <constraint firstAttribute="height" constant="150" id="f0G-9F-ql1"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bB8-uG-znQ">
-                                <rect key="frame" x="132" y="193" width="150" height="30"/>
-                                <state key="normal" title="URL"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSa-vn-SRp">
+                                <rect key="frame" x="159" y="230" width="97" height="30"/>
+                                <state key="normal" title="Go to Website"/>
+                                <connections>
+                                    <action selector="onPressedSafariButton:" destination="4O0-Lq-8Tq" eventType="touchUpInside" id="MlB-Tv-lls"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -145,7 +153,7 @@
                         <outlet property="imageView" destination="TSN-zo-vFi" id="qbr-Hc-fqR"/>
                         <outlet property="populationTextField" destination="Q9B-kj-Y0K" id="vsf-vs-YSl"/>
                         <outlet property="stateTextField" destination="idj-ZE-nCe" id="V84-Cu-IDN"/>
-                        <outlet property="urlButton" destination="bB8-uG-znQ" id="eLo-hd-gNX"/>
+                        <outlet property="urlTextField" destination="zOK-4F-J74" id="6mr-ba-bWo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pvn-RP-9uC" userLabel="First Responder" sceneMemberID="firstResponder"/>
