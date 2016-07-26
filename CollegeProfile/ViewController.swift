@@ -30,9 +30,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //Toggle editing on
         editButton.tag = 0
         
-        
-
-        
         //ERROR:
         //I'm getting an EXC BAD INSTRUCTION error which normally has to do with some implicitly unwrapped optional property (according to Stack Overflow). I've played around with placement of the ! and Xcode won't compile unless the ! is there. I've tried swapping it with a ?, and Xcode doesn't like that.
         //Sidenote: Why does Xcode make suggestions that it then refuses to compile...?
@@ -64,7 +61,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             tableView.reloadData()
         }
     }
-
+    
     //Allow entries to be added and then allow cancellation of addition
     @IBAction func onButtonPressAdd(sender: UIBarButtonItem) {
         
@@ -85,7 +82,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.colleges.append(College(name: collegeTextField.text!))
             self.tableView.reloadData()
         }
-    
         alert.addAction(addAction)
         self.presentViewController(alert, animated: true, completion: nil)
     }
@@ -121,6 +117,4 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let index = tableView.indexPathForSelectedRow?.row
         dvc.college = colleges[index!]
         }
-    
-    
 }
