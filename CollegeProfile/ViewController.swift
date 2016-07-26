@@ -27,9 +27,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         //ERROR:
         //I'm getting an EXC BAD INSTRUCTION error which normally has to do with some implicitly unwrapped optional property (according to Stack Overflow). I've played around with placement of the ! and Xcode won't compile unless the ! is there. I've tried swapping it with a ?, and Xcode doesn't like that.
+        //Sidenote: Why does Xcode make suggestions that it then refuses to compile...?
+        
+        //I'm an idiot.
         
         
-        colleges.append(College(name: "UCSD", state: "California", population: 32000, image: (UIImage(named: "UCSD"))))
+        colleges.append(College(name: "UCSD", state: "California", population: 32000, image: (UIImage(named: "uic")!)))
         
     }
     
