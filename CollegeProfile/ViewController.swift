@@ -14,6 +14,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var colleges = ["Princeton", "UCLA", "UIC", "Harvard"]
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return colleges.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
+        
+        cell.textLabel?.text = colleges[indexPath.row]
+        
+        return cell
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
