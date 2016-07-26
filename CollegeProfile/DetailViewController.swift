@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var collegeTextField: UITextField!
     @IBOutlet weak var stateTextField: UITextField!
@@ -23,9 +23,11 @@ class DetailViewController: UIViewController {
     //This should answer my question, but I haven't read it yet.
     //------------------------------------------------------
     var college: College!
+    var imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagePicker.delegate = self
         
         collegeTextField.text = college.name
         stateTextField.text = college.state
@@ -41,12 +43,27 @@ class DetailViewController: UIViewController {
         
     }
     
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
+        imagePicker.dismissViewControllerAnimated(true){
+            let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+            self.imageView.image = selectedImage
+        }
+    }
+    
+    //Allow image embedding from gallery
+    @IBAction func onButtonPressGallery(sender: UIButton) {
+        self.imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        self.presentViewController(self.imagePicker, animated: true, completion: nil)
+    }
+    
     @IBAction func onPressedSaveButton(sender: AnyObject) {
         
         college.name = collegeTextField.text!
         college.state = stateTextField.text!
         college.population = Int(populationTextField.text!)!
         college.url = urlTextField.text!
+        college.image = imageView.image!
         
         //Pull keyboard
         self.view.endEditing(true)

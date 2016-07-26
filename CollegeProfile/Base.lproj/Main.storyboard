@@ -136,6 +136,13 @@
                                     <action selector="onPressedSafariButton:" destination="4O0-Lq-8Tq" eventType="touchUpInside" id="MlB-Tv-lls"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVB-GH-4BO">
+                                <rect key="frame" x="183" y="538" width="48" height="30"/>
+                                <state key="normal" title="Gallery"/>
+                                <connections>
+                                    <action selector="onButtonPressGallery:" destination="4O0-Lq-8Tq" eventType="touchUpInside" id="PT6-Kt-6ao"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
