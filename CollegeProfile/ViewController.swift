@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var addButton: UIBarButtonItem!
@@ -120,5 +120,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let dvc = segue.destinationViewController as! DetailViewController
         let index = tableView.indexPathForSelectedRow?.row
         dvc.college = colleges[index!]
-        }
+    }
 }
