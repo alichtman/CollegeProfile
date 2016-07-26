@@ -91,7 +91,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return true
     }
     
-    //Reordering things
+    //Allows for reordering
     func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
         let college = colleges[sourceIndexPath.row]
         colleges.removeAtIndex(sourceIndexPath.row)
