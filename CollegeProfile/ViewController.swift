@@ -17,13 +17,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //Initialize a new array of type college
     var colleges: [College] = []
     
+    //Refreshes data after editing it in the Detail View Controller
+    override func viewWillAppear(animated: Bool) {
+        //Trying this in here because it didn't work anywhere else? I'm sort of running out of places to drop this line of code in...
+        //YES.
+        self.tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Toggle editing on???
+        //Toggle editing on
         editButton.tag = 0
         
-        //Adding sample College
+        
+
         
         //ERROR:
         //I'm getting an EXC BAD INSTRUCTION error which normally has to do with some implicitly unwrapped optional property (according to Stack Overflow). I've played around with placement of the ! and Xcode won't compile unless the ! is there. I've tried swapping it with a ?, and Xcode doesn't like that.
@@ -31,9 +39,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         //I'm an idiot.
         
-        
+        //Initializing sample
         colleges.append(College(name: "UCSD", state: "California", population: 32000, image: (UIImage(named: "uic")!)))
-        
     }
     
     //Set up tableView
@@ -42,12 +49,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     //Set up tableView
-
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MyCell", forIndexPath: indexPath)
         
         cell.textLabel?.text = colleges[indexPath.row].name
-        
         return cell
     }
     
@@ -115,6 +120,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let dvc = segue.destinationViewController as! DetailViewController
         let index = tableView.indexPathForSelectedRow?.row
         dvc.college = colleges[index!]
-    }
+        }
+    
     
 }
