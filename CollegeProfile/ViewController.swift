@@ -14,8 +14,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var addButton: UIBarButtonItem!
     
-    //var colleges = ["Princeton", "UCLA", "UIC", "Harvard"]
-    
     //Initialize a new array of type college
     var colleges: [College] = []
     
@@ -26,7 +24,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         editButton.tag = 0
         
         //Adding sample College
-        colleges.append(College(name: "UCSD", state: "California", population: 32000, image: UIImage(named: "UCSD")!))
+        
+        //ERROR:
+        //I'm getting an EXC BAD INSTRUCTION error which normally has to do with some implicitly unwrapped optional property (according to Stack Overflow). I've played around with placement of the ! and Xcode won't compile unless the ! is there. I've tried swapping it with a ?, and Xcode doesn't like that.
+        
+        
+        colleges.append(College(name: "UCSD", state: "California", population: 32000, image: (UIImage(named: "UCSD"))))
         
     }
     
@@ -103,4 +106,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             sender.tag = 0
         }
     }
+    
+    //Segue and data transfer
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dvc = segue.destinationViewController as! DetailViewController
+        let index = tableView.indexPathForSelectedRow?.row
+        dvc.college = colleges[index!]
+    }
+    
 }

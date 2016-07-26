@@ -38,6 +38,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="4O0-Lq-8Tq" kind="show" id="sZG-fh-Hto"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
