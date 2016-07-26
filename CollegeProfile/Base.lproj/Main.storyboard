@@ -77,6 +77,69 @@
             </objects>
             <point key="canvasLocation" x="1252" y="362"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Kmk-x9-EuX">
+            <objects>
+                <viewController id="4O0-Lq-8Tq" customClass="DetailViewController" customModule="CollegeProfile" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GUU-L4-ZaM"/>
+                        <viewControllerLayoutGuide type="bottom" id="CdK-zU-I5A"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y77-4E-dwE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="College" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="orC-O8-qHS">
+                                <rect key="frame" x="132" y="79" width="150" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="idj-ZE-nCe">
+                                <rect key="frame" x="132" y="127" width="150" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Population" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q9B-kj-Y0K">
+                                <rect key="frame" x="132" y="178" width="150" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6Q-xs-8se">
+                                <rect key="frame" x="190" y="376" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="onPressedSaveButton:" destination="4O0-Lq-8Tq" eventType="touchUpInside" id="Fmy-AY-n3w"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TSN-zo-vFi">
+                                <rect key="frame" x="82" y="218" width="250" height="150"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="idj-ZE-nCe" firstAttribute="centerX" secondItem="y77-4E-dwE" secondAttribute="centerX" id="2am-jc-72J"/>
+                            <constraint firstItem="TSN-zo-vFi" firstAttribute="leading" secondItem="y77-4E-dwE" secondAttribute="leadingMargin" constant="62" id="3v9-Pi-fHc"/>
+                            <constraint firstItem="TSN-zo-vFi" firstAttribute="centerX" secondItem="y77-4E-dwE" secondAttribute="centerX" id="5CD-Mn-Ngj"/>
+                            <constraint firstItem="orC-O8-qHS" firstAttribute="centerX" secondItem="y77-4E-dwE" secondAttribute="centerX" id="BKf-Zt-2CX"/>
+                            <constraint firstItem="TSN-zo-vFi" firstAttribute="top" secondItem="Q9B-kj-Y0K" secondAttribute="bottom" constant="10" id="H2V-HQ-aXA"/>
+                            <constraint firstItem="Q9B-kj-Y0K" firstAttribute="centerX" secondItem="y77-4E-dwE" secondAttribute="centerX" id="Hkr-RD-Tp9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TSN-zo-vFi" secondAttribute="trailing" constant="62" id="TkZ-L0-RZP"/>
+                            <constraint firstItem="R6Q-xs-8se" firstAttribute="top" secondItem="TSN-zo-vFi" secondAttribute="bottom" constant="8" id="Za8-QL-YFw"/>
+                            <constraint firstItem="R6Q-xs-8se" firstAttribute="centerX" secondItem="y77-4E-dwE" secondAttribute="centerX" id="zSh-94-opj"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="collegeTextField" destination="orC-O8-qHS" id="Svv-tZ-fe4"/>
+                        <outlet property="imageView" destination="TSN-zo-vFi" id="qbr-Hc-fqR"/>
+                        <outlet property="populationTextField" destination="Q9B-kj-Y0K" id="vsf-vs-YSl"/>
+                        <outlet property="stateTextField" destination="idj-ZE-nCe" id="V84-Cu-IDN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pvn-RP-9uC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1783" y="362"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="eOC-xX-l4s">
             <objects>
