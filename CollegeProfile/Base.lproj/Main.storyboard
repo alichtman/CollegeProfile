@@ -117,8 +117,12 @@
                                     <action selector="onPressedSaveButton:" destination="4O0-Lq-8Tq" eventType="touchUpInside" id="Fmy-AY-n3w"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TSN-zo-vFi">
-                                <rect key="frame" x="82" y="216" width="250" height="150"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TSN-zo-vFi">
+                                <rect key="frame" x="82" y="231" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="E9T-wI-0fu"/>
+                                    <constraint firstAttribute="height" constant="150" id="f0G-9F-ql1"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
