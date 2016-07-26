@@ -14,13 +14,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var addButton: UIBarButtonItem!
     
-    var colleges = ["Princeton", "UCLA", "UIC", "Harvard"]
+    //var colleges = ["Princeton", "UCLA", "UIC", "Harvard"]
+    
+    //Initialize a new array of type college
+    var colleges: [College] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Toggle editing on???
         editButton.tag = 0
+        
+        //Adding sample College
+        colleges.append(College(name: "UCSD", state: "California", population: 32000, image: UIImage(named: "UCSD")!))
+        
     }
     
     //Set up tableView
@@ -33,7 +40,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MyCell", forIndexPath: indexPath)
         
-        cell.textLabel?.text = colleges[indexPath.row]
+        cell.textLabel?.text = colleges[indexPath.row].name
         
         return cell
     }
@@ -55,17 +62,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         alert.addTextFieldWithConfigurationHandler { (textField) in
             textField.placeholder = "Add College Here"
         }
+        
         //Allowing cancellation of new entry
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         alert.addAction(cancelAction)
-        
-        
         
         //Creation of new entry
         let addAction = UIAlertAction(title: "Add", style: .Default) { (action) in
             
             let collegeTextField = alert.textFields![0] as UITextField
-            self.colleges.append(collegeTextField.text!)
+            self.colleges.append(College(name: collegeTextField.text!))
             self.tableView.reloadData()
         }
     
