@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet weak var tabelView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     var colleges = ["Princeton", "UCLA", "UIC", "Harvard"]
     
@@ -42,8 +42,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
 
-
-
-
+    //Allow entries to be added and then allow cancellation of addition
+    @IBAction func onButtonPressAdd(sender: UIBarButtonItem) {
+        
+        //Alert for creation of new entry
+        let alert = UIAlertController(title: "Add College", message: nil, preferredStyle: .Alert)
+        alert.addTextFieldWithConfigurationHandler { (textField) in
+            textField.placeholder = "Add College Here"
+        }
+        //Allowing cancellation of new entry
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        alert.addAction(cancelAction)
+        
+        
+        
+        //Creation of new entry
+        let addAction = UIAlertAction(title: "Add", style: .Default) { (action) in
+            
+            let collegeTextField = alert.textFields![0] as UITextField
+            self.colleges.append(collegeTextField.text!)
+            self.tableView.reloadData()
+        }
+    
+        alert.addAction(addAction)
+        self.presentViewController(alert, animated: true, completion: nil)
 }
 
+}

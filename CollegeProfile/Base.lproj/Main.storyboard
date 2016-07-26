@@ -54,10 +54,17 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JK0-tO-VVI" secondAttribute="bottom" id="hlA-d9-6oy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="IM0-km-Sel"/>
+                    <navigationItem key="navigationItem" id="IM0-km-Sel">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Clh-KH-tVR"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ovV-5c-mtu">
+                            <connections>
+                                <action selector="onButtonPressAdd:" destination="BYZ-38-t0r" id="rr0-MG-qOl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
-                        <outlet property="tabelView" destination="JK0-tO-VVI" id="SLv-WO-E34"/>
+                        <outlet property="tableView" destination="JK0-tO-VVI" id="tOQ-Vb-XNB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
